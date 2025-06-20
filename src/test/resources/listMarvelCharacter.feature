@@ -19,4 +19,4 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
   Scenario: T-API-HU-0001-CA01-Obtener todos los personajes 200 - karate
     When method GET
     Then status 200
-    # And match response == []
+    And match response == []

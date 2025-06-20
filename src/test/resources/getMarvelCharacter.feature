@@ -25,8 +25,6 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
     * path createdId
     When method GET
     Then status 200
-    # And match response.name == 'Iron Man'
-    # And match response.id == 1
     * karate.set('createdId', createdId)
 
   @id:6 @obtenerPersonaje @errorNoEncontrado404
@@ -34,7 +32,6 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
     * path '999'
     When method GET
     Then status 404
-    # And match response.error contains 'not found'
-    # And match response.status == 404
+    And match response.error contains 'not found'
     * path createdId
     When method DELETE

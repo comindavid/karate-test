@@ -21,8 +21,8 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
     And request jsonData
     When method POST
     Then status 201
-    # And match response.name == 'Iron Man'
-    # And match response.id != null
+    And match response.name == 'Iron Man'
+    And match response.id != null
     * karate.set('createdId', response.id)
 
   @id:3 @crearPersonaje @errorNombreDuplicado400
@@ -31,8 +31,7 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
     And request jsonData
     When method POST
     Then status 400
-    # And match response.error contains 'already exists'
-    # And match response.status == 400
+    And match response.error contains 'already exists'
     * def createdId = karate.get('createdId')
     * path createdId
     When method DELETE
@@ -44,5 +43,4 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
     And request jsonData
     When method POST
     Then status 400
-    # And match response.name contains 'required'
-    # And match response.status == 400
+    And match response.name contains 'required'

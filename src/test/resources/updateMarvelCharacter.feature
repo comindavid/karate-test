@@ -28,8 +28,8 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
     And request jsonData
     When method PUT
     Then status 200
-    # And match response.description == 'Updated description'
-    # And match response.id == createdId
+    And match response.description == 'Updated description'
+    And match response.id == createdId
     * karate.set('createdId', createdId)
     * path createdId
     When method DELETE
@@ -41,5 +41,4 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
     And request jsonData
     When method PUT
     Then status 404
-    # And match response.error contains 'not found'
-    # And match response.status == 404
+    And match response.error contains 'not found'

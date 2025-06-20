@@ -35,5 +35,4 @@ Feature: HU-0001 CRUD de personajes Marvel (microservicio para gestión de perso
     * path '999'
     When method DELETE
     Then status 404
-    # And match response.error contains 'not found'
-    # And match response.status == 404
+    And match response.error contains 'not found'
